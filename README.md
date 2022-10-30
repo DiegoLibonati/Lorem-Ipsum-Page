@@ -1,7 +1,5 @@
 # Lorem-Ipsum-Page
 
-# Image-Compressor-Program
-
 ## Getting Started
 
 1. Clone the repository
@@ -63,5 +61,3 @@ function generadorText(randomValue){
 `https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Lorem%20ipsum%20page`
 
 ## Video
-
-<video src="https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Videos/lorem.mp4" controls></video>
