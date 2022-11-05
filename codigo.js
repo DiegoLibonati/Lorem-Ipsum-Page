@@ -17,8 +17,6 @@ const paragraphs = [
   `Tilde twee af drinking vinegar trust fund. Ramps vaporware hell of kombucha 8-bit chambray YOLO wolf vinyl pop-up cornhole activated charcoal mixtape. Mixtape marfa before they sold out XOXO poutine craft beer scenester cronut drinking vinegar knausgaard you probably haven't heard of them hella. Literally selvage mumblecore activated charcoal echo park vegan deep v fingerstache irony kogi microdosing trust fund. Schlitz cloud bread activated charcoal, master cleanse kitsch shoreditch umami bicycle rights la croix post-ironic biodiesel edison bulb. 8-bit disrupt banjo selvage. Flannel selfies organic put a bird on it keytar, lo-fi health goth umami fam four loko kombucha adaptogen hammock austin tilde.`,
 ];
 
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 btnGenerate.addEventListener("click", () => {
   articleContainer.textContent = "";
 
@@ -27,7 +25,7 @@ btnGenerate.addEventListener("click", () => {
   for (i = 0; i < valueGenerate; i++) {
     const elementP = document.createElement("p");
 
-    const randomValue = Math.floor(Math.random(numbers) * numbers.length);
+    const randomValue = Math.floor(Math.random() * paragraphs.length);
 
     elementP.textContent = paragraphs[randomValue];
 
