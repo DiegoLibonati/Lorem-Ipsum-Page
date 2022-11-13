@@ -31,7 +31,7 @@ I made a web page that allows the user to display different paragraphs. Once the
 
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Lorem%20ipsum%20page`
+`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Lorem%20Ipsum%20Page`
 
 ## Video
 
