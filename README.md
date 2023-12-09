@@ -23,15 +23,9 @@ I made a web page that allows the user to display different paragraphs. Once the
 2. CSS3
 3. HTML5
 
-## Galery
-
-![Lorem-Ipsum](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/lorem-0.jpg)
-
-![Lorem-Ipsum](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/lorem-1.jpg)
-
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Lorem%20Ipsum%20Page`
+[`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Lorem%20Ipsum%20Page`](https://www.diegolibonati.com.ar/#/project/93)
 
 ## Video
 
