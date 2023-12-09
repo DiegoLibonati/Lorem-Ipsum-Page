@@ -25,7 +25,7 @@ I made a web page that allows the user to display different paragraphs. Once the
 
 ## Portfolio Link
 
-[`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Lorem%20Ipsum%20Page`](https://www.diegolibonati.com.ar/#/project/93)
+[`https://www.diegolibonati.com.ar/#/project/93`](https://www.diegolibonati.com.ar/#/project/93)
 
 ## Video
 
