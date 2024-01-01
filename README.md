@@ -13,6 +13,13 @@
 2. Join to the correct path of the clone
 3. Open index.html in your favorite navigator
 
+---
+
+1. Clone the repository
+2. Join to the correct path of the clone
+3. Execute: `yarn install`
+4. Execute: `yarn dev`
+
 ## Description
 
 I made a web page that allows the user to display different paragraphs. Once the user enters the number of paragraphs to display and press `Generate`, it will generate the number of paragraphs the user entered. If the user entered 7 and pressed `Generate`, 7 random paragraphs of lorem ipsum will be displayed.
