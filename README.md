@@ -19,7 +19,7 @@ I made a web page that allows the user to display different paragraphs. Once the
 
 ## Technologies used
 
-1. Javascript
+1. Typescript
 2. CSS3
 3. HTML5
 
