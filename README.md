@@ -1,4 +1,4 @@
-# Lorem-Ipsum-Page
+# Lorem Ipsum
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ I made a web page that allows the user to display different paragraphs. Once the
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/93`](https://www.diegolibonati.com.ar/#/project/93)
+[`https://www.diegolibonati.com.ar/#/project/Lorem-Ipsum`](https://www.diegolibonati.com.ar/#/project/Lorem-Ipsum)
 
 ## Video
 
