@@ -1,9 +1,11 @@
+import { getElements } from "./helpers/getElements";
 import { paragraphs } from "./constants/constants";
-import { articleContainer, btnGenerate, input } from "./constants/elements";
 
 const fragment = new DocumentFragment();
 
 const handleClickGenerate = () => {
+  const { articleContainer, input } = getElements();
+
   articleContainer.textContent = "";
 
   const valueGenerate = Number(input.value);
@@ -22,6 +24,8 @@ const handleClickGenerate = () => {
 };
 
 const onInit = () => {
+  const { btnGenerate } = getElements();
+
   btnGenerate.addEventListener("click", handleClickGenerate);
 };
 
