@@ -1,9 +1,9 @@
 export const getElements = () => ({
-  input: document.querySelector(".article-center input") as HTMLInputElement,
+  input: document.querySelector(".section__wrapper input") as HTMLInputElement,
   btnGenerate: document.querySelector(
-    ".article-center button"
+    ".section__wrapper button"
   ) as HTMLButtonElement,
   articleContainer: document.querySelector(
-    ".article-center-generate"
+    ".section__paragraphs"
   ) as HTMLElement,
 });
