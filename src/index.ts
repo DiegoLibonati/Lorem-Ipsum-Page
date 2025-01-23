@@ -12,6 +12,7 @@ const handleClickGenerate = () => {
 
   for (let i = 0; i < valueGenerate; i++) {
     const p = document.createElement("p");
+    p.setAttribute("class", "lorem-ipsum__paragraphs-text")
 
     const randomValue = Math.floor(Math.random() * paragraphs.length);
 

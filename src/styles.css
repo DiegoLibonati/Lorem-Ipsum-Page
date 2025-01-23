@@ -1,19 +1,4 @@
-.header {
-  height: 10rem;
-}
-
-.header__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.header__wrapper h1 {
-  font-size: 3rem;
-  text-align: center;
-}
-
-main {
+.main-app {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,14 +6,30 @@ main {
   width: 100%;
 }
 
-.section {
+.header-app {
+  height: 10rem;
+}
+
+.header-app__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.header-app__content-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.lorem-ipsum {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
 }
 
-.section__wrapper {
+.lorem-ipsum__header {
   width: 100%;
   display: flex;
   flex-flow: column wrap;
@@ -36,19 +37,19 @@ main {
   justify-content: center;
 }
 
-.section__wrapper__data {
+.lorem-ipsum__header-content {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-.section__wrapper__data p {
+.lorem-ipsum__header-content-label {
   padding: 1rem;
   font-size: 1.8rem;
 }
 
-.section__wrapper__data input {
+.lorem-ipsum__header-content-input {
   max-width: 8rem;
   max-height: 3rem;
   font-size: 1.5rem;
@@ -57,7 +58,7 @@ main {
   border: 0.1rem solid var(--black-color);
 }
 
-.section__wrapper button {
+.lorem-ipsum__header-btn-generate {
   font-size: 1.5rem;
   border: 0.1rem solid var(--black-color);
   padding-top: 0.5rem;
@@ -71,13 +72,16 @@ main {
   width: fit-content;
 }
 
-.section__paragraphs {
-  width: 50%;
+.lorem-ipsum__paragraphs {
+  width: 75%;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.section__paragraphs p {
-  padding: 1rem;
+.lorem-ipsum__paragraphs-text {
+  text-align: justify;
+  font-size: 1.5rem;
 }

@@ -10,23 +10,31 @@
     <link rel="stylesheet" type="text/css" href="./src/styles.css" />
   </head>
   <body>
-    <main>
-      <section class="header">
-        <div class="header__wrapper">
-          <h1>TIRED OF BORING LOREM IPSUM?</h1>
+    <main class="main-app">
+      <section class="header-app">
+        <div class="header-app__content">
+          <h1 class="header-app__content-title">
+            TIRED OF BORING LOREM IPSUM?
+          </h1>
         </div>
       </section>
 
-      <section class="section">
-        <article class="section__wrapper">
-          <div class="section__wrapper__data">
-            <p>Paragraphs:</p>
-            <input type="number" />
+      <section class="lorem-ipsum">
+        <article class="lorem-ipsum__header">
+          <div class="lorem-ipsum__header-content">
+            <p class="lorem-ipsum__header-content-label">Paragraphs:</p>
+            <input type="number" class="lorem-ipsum__header-content-input" />
           </div>
-          <button type="button" aria-label="generate">GENERATE</button>
+          <button
+            type="button"
+            aria-label="generate"
+            class="lorem-ipsum__header-btn-generate"
+          >
+            GENERATE
+          </button>
         </article>
 
-        <article class="section__paragraphs"></article>
+        <article class="lorem-ipsum__paragraphs"></article>
       </section>
     </main>
 

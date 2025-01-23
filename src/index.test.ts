@@ -35,7 +35,7 @@ describe("index.ts", () => {
       const articles = screen.getAllByRole("article");
 
       const articleContainer = articles.find((article) =>
-        article.classList.contains("section__paragraphs")
+        article.classList.contains("lorem-ipsum__paragraphs")
       );
 
       expect(input).toBeInTheDocument();
