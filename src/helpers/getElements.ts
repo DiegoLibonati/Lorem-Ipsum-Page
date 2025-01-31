@@ -1,7 +1,7 @@
 export const getElements = () => ({
-  input: document.querySelector(".lorem-ipsum__header-content-input") as HTMLInputElement,
+  input: document.querySelector(".lorem-ipsum__input") as HTMLInputElement,
   btnGenerate: document.querySelector(
-    ".lorem-ipsum__header-btn-generate"
+    ".lorem-ipsum__btn-generate"
   ) as HTMLButtonElement,
   articleContainer: document.querySelector(
     ".lorem-ipsum__paragraphs"
