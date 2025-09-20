@@ -1,5 +1,5 @@
-import { getElements } from "./helpers/getElements";
-import { paragraphs } from "./constants/constants";
+import { getElements } from "@src/helpers/getElements";
+import { paragraphs } from "@src/constants/constants";
 
 const fragment = new DocumentFragment();
 
