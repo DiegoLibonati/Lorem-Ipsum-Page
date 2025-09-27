@@ -22,6 +22,7 @@ I made a web page that allows the user to display different paragraphs. Once the
 1. Typescript
 2. CSS3
 3. HTML5
+4. Vite
 
 ## Libraries used
 
