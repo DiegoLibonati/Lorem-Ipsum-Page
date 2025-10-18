@@ -1,4 +1,4 @@
-.main-app {
+.lorem-ipsum-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +30,7 @@
   width: 100%;
 }
 
-.lorem-ipsum__header {
+.lorem-ipsum__form {
   width: 100%;
   display: flex;
   flex-flow: column wrap;
@@ -82,7 +82,4 @@
   margin-top: 2rem;
 }
 
-.lorem-ipsum__paragraph {
-  text-align: justify;
-  font-size: 1.5rem;
-}
+
