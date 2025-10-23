@@ -44,7 +44,7 @@ describe("LoremIpsumPage.ts", () => {
     test("It should render header section", () => {
       renderComponent();
 
-      const header = document.querySelector(".header-app");
+      const header = document.querySelector<HTMLElement>(".header-app");
       const title = screen.getByText("TIRED OF BORING LOREM IPSUM?");
 
       expect(header).toBeInTheDocument();
@@ -54,9 +54,10 @@ describe("LoremIpsumPage.ts", () => {
     test("It should render lorem ipsum section", () => {
       renderComponent();
 
-      const section = document.querySelector(".lorem-ipsum");
-      const form = document.querySelector(".lorem-ipsum__form");
-      const paragraphsContainer = document.querySelector(
+      const section = document.querySelector<HTMLElement>(".lorem-ipsum");
+      const form =
+        document.querySelector<HTMLFormElement>(".lorem-ipsum__form");
+      const paragraphsContainer = document.querySelector<HTMLElement>(
         ".lorem-ipsum__paragraphs"
       );
 
@@ -68,12 +69,11 @@ describe("LoremIpsumPage.ts", () => {
     test("It should render h1 for title", () => {
       renderComponent();
 
-      const title = document.querySelector(
-        ".header-app__title"
-      ) as HTMLHeadingElement;
+      const title =
+        document.querySelector<HTMLHeadingElement>(".header-app__title");
 
       expect(title).toBeInstanceOf(HTMLHeadingElement);
-      expect(title.tagName).toBe("H1");
+      expect(title!.tagName).toBe("H1");
     });
   });
 
@@ -81,9 +81,12 @@ describe("LoremIpsumPage.ts", () => {
     test("It should render form with all elements", () => {
       renderComponent();
 
-      const form = document.querySelector(".lorem-ipsum__form");
+      const form =
+        document.querySelector<HTMLFormElement>(".lorem-ipsum__form");
       const label = screen.getByText("Paragraphs:");
-      const input = document.querySelector(".lorem-ipsum__input");
+      const input = document.querySelector<HTMLInputElement>(
+        ".lorem-ipsum__input"
+      );
       const button = screen.getByRole("button", { name: /generate/i });
 
       expect(form).toBeInTheDocument();
@@ -116,7 +119,9 @@ describe("LoremIpsumPage.ts", () => {
     test("It should render label element", () => {
       renderComponent();
 
-      const label = document.querySelector(".lorem-ipsum__label");
+      const label = document.querySelector<HTMLParagraphElement>(
+        ".lorem-ipsum__label"
+      );
 
       expect(label).toBeInTheDocument();
       expect(label?.tagName).toBe("P");
@@ -126,7 +131,9 @@ describe("LoremIpsumPage.ts", () => {
     test("It should render article for paragraphs container", () => {
       renderComponent();
 
-      const article = document.querySelector(".lorem-ipsum__paragraphs");
+      const article = document.querySelector<HTMLElement>(
+        ".lorem-ipsum__paragraphs"
+      );
 
       expect(article).toBeInTheDocument();
       expect(article?.tagName).toBe("ARTICLE");
@@ -146,9 +153,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "3");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(3);
     });
@@ -165,9 +173,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "5");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(5);
     });
@@ -184,9 +193,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "1");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(1);
     });
@@ -202,9 +212,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "0");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(0);
     });
@@ -223,10 +234,13 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "2");
       await user.click(button);
 
-      const container = document.querySelector(".lorem-ipsum__paragraphs");
-      const paragraphsInContainer = container?.querySelectorAll(
-        ".lorem-ipsum__paragraph"
+      const container = document.querySelector<HTMLElement>(
+        ".lorem-ipsum__paragraphs"
       );
+      const paragraphsInContainer =
+        container?.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(paragraphsInContainer?.length).toBe(2);
     });
@@ -243,7 +257,9 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "1");
       await user.click(button);
 
-      const paragraph = document.querySelector(".lorem-ipsum__paragraph");
+      const paragraph = document.querySelector<HTMLParagraphElement>(
+        ".lorem-ipsum__paragraph"
+      );
 
       expect(paragraph?.textContent).toBe(paragraphs[0]);
     });
@@ -275,7 +291,7 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "2");
       await user.click(button);
 
-      const paragraphElements = document.querySelectorAll(
+      const paragraphElements = document.querySelectorAll<HTMLParagraphElement>(
         ".lorem-ipsum__paragraph"
       );
 
@@ -298,7 +314,7 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "3");
       await user.click(button);
 
-      let generatedParagraphs = document.querySelectorAll(
+      let generatedParagraphs = document.querySelectorAll<HTMLParagraphElement>(
         ".lorem-ipsum__paragraph"
       );
       expect(generatedParagraphs.length).toBe(3);
@@ -307,7 +323,7 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "2");
       await user.click(button);
 
-      generatedParagraphs = document.querySelectorAll(
+      generatedParagraphs = document.querySelectorAll<HTMLParagraphElement>(
         ".lorem-ipsum__paragraph"
       );
       expect(generatedParagraphs.length).toBe(2);
@@ -353,9 +369,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "1");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
       expect(generatedParagraphs.length).toBe(1);
     });
   });
@@ -373,9 +390,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "4");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(4);
     });
@@ -392,9 +410,10 @@ describe("LoremIpsumPage.ts", () => {
       input!.value = "3";
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(3);
     });
@@ -421,9 +440,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "3");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(3);
       expect(generatedParagraphs[0].textContent).toBe(paragraphs[0]);
@@ -457,15 +477,14 @@ describe("LoremIpsumPage.ts", () => {
     test("It should prevent default form submission", async () => {
       renderComponent();
 
-      const form = document.querySelector(
-        ".lorem-ipsum__form"
-      ) as HTMLFormElement;
+      const form =
+        document.querySelector<HTMLFormElement>(".lorem-ipsum__form");
       const input = document.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
       );
 
       const submitSpy = jest.fn((e) => e.preventDefault());
-      form.addEventListener("submit", submitSpy);
+      form!.addEventListener("submit", submitSpy);
 
       await user.type(input!, "1");
       await user.click(screen.getByRole("button", { name: /generate/i }));
@@ -478,7 +497,8 @@ describe("LoremIpsumPage.ts", () => {
     test("It should have form element with correct class", () => {
       renderComponent();
 
-      const form = document.querySelector(".lorem-ipsum__form");
+      const form =
+        document.querySelector<HTMLFormElement>(".lorem-ipsum__form");
 
       expect(form).toBeInstanceOf(HTMLFormElement);
       expect(form?.tagName).toBe("FORM");
@@ -489,8 +509,8 @@ describe("LoremIpsumPage.ts", () => {
     test("It should have correct section structure", () => {
       const { container } = renderComponent();
 
-      const headerSection = container.querySelector(".header-app");
-      const loremSection = container.querySelector(".lorem-ipsum");
+      const headerSection = container.querySelector<HTMLElement>(".header-app");
+      const loremSection = container.querySelector<HTMLElement>(".lorem-ipsum");
 
       expect(headerSection?.tagName).toBe("SECTION");
       expect(loremSection?.tagName).toBe("SECTION");
@@ -499,8 +519,9 @@ describe("LoremIpsumPage.ts", () => {
     test("It should nest form inside lorem ipsum section", () => {
       renderComponent();
 
-      const loremSection = document.querySelector(".lorem-ipsum");
-      const form = loremSection?.querySelector(".lorem-ipsum__form");
+      const loremSection = document.querySelector<HTMLElement>(".lorem-ipsum");
+      const form =
+        loremSection?.querySelector<HTMLFormElement>(".lorem-ipsum__form");
 
       expect(form).toBeInTheDocument();
     });
@@ -508,8 +529,8 @@ describe("LoremIpsumPage.ts", () => {
     test("It should nest paragraphs container inside lorem ipsum section", () => {
       renderComponent();
 
-      const loremSection = document.querySelector(".lorem-ipsum");
-      const paragraphsContainer = loremSection?.querySelector(
+      const loremSection = document.querySelector<HTMLElement>(".lorem-ipsum");
+      const paragraphsContainer = loremSection?.querySelector<HTMLElement>(
         ".lorem-ipsum__paragraphs"
       );
 
@@ -538,9 +559,10 @@ describe("LoremIpsumPage.ts", () => {
       await user.type(input!, "1");
       await user.click(button);
 
-      const generatedParagraphs = document.querySelectorAll(
-        ".lorem-ipsum__paragraph"
-      );
+      const generatedParagraphs =
+        document.querySelectorAll<HTMLParagraphElement>(
+          ".lorem-ipsum__paragraph"
+        );
 
       expect(generatedParagraphs.length).toBe(1);
     });

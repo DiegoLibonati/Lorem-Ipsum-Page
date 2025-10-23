@@ -111,7 +111,9 @@ describe("Paragraph.ts", () => {
       const { container } = renderComponent(props);
 
       expect(container.innerHTML).toBe("<strong>Bold text</strong>");
-      expect(container.querySelector("strong")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>("strong")
+      ).toBeInTheDocument();
     });
 
     test("It should handle mixed HTML and text content", () => {
@@ -122,7 +124,7 @@ describe("Paragraph.ts", () => {
       const { container } = renderComponent(props);
 
       expect(container.innerHTML).toBe("This is <em>emphasized</em> text");
-      expect(container.querySelector("em")).toBeInTheDocument();
+      expect(container.querySelector<HTMLElement>("em")).toBeInTheDocument();
     });
 
     test("It should handle multiple HTML tags", () => {
@@ -132,8 +134,10 @@ describe("Paragraph.ts", () => {
 
       const { container } = renderComponent(props);
 
-      expect(container.querySelector("strong")).toBeInTheDocument();
-      expect(container.querySelector("em")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>("strong")
+      ).toBeInTheDocument();
+      expect(container.querySelector<HTMLElement>("em")).toBeInTheDocument();
     });
 
     test("It should handle nested HTML tags", () => {
@@ -143,8 +147,12 @@ describe("Paragraph.ts", () => {
 
       const { container } = renderComponent(props);
 
-      expect(container.querySelector("span")).toBeInTheDocument();
-      expect(container.querySelector("strong")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLSpanElement>("span")
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>("strong")
+      ).toBeInTheDocument();
     });
   });
 
@@ -218,7 +226,7 @@ describe("Paragraph.ts", () => {
 
       const paragraph1 = screen.getByText("First paragraph");
       const paragraph2 = screen.getByText("Second paragraph");
-      const allParagraphs = document.querySelectorAll(
+      const allParagraphs = document.querySelectorAll<HTMLParagraphElement>(
         ".lorem-ipsum__paragraph"
       );
 
@@ -279,7 +287,7 @@ describe("Paragraph.ts", () => {
       const { container } = renderComponent(props);
 
       expect(container.innerHTML).toBe("Line 1<br>Line 2");
-      expect(container.querySelector("br")).toBeInTheDocument();
+      expect(container.querySelector<HTMLElement>("br")).toBeInTheDocument();
     });
 
     test("It should handle tab characters", () => {
@@ -337,7 +345,9 @@ describe("Paragraph.ts", () => {
       const { container } = renderComponent(props);
 
       expect(container.innerHTML).toBe("<span>Test</span>");
-      expect(container.querySelector("span")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLSpanElement>("span")
+      ).toBeInTheDocument();
     });
 
     test("It should allow HTML tags to be rendered", () => {
@@ -347,7 +357,7 @@ describe("Paragraph.ts", () => {
 
       const { container } = renderComponent(props);
 
-      const link = container.querySelector("a");
+      const link = container.querySelector<HTMLAnchorElement>("a");
       expect(link).toBeInTheDocument();
       expect(link?.href).toContain("#");
     });
@@ -365,8 +375,8 @@ describe("Paragraph.ts", () => {
       document.body.innerHTML = "";
       const { container: htmlP } = renderComponent(htmlProps);
 
-      expect(plainP.querySelector("b")).toBeNull();
-      expect(htmlP.querySelector("b")).toBeInTheDocument();
+      expect(plainP.querySelector<HTMLElement>("b")).toBeNull();
+      expect(htmlP.querySelector<HTMLElement>("b")).toBeInTheDocument();
     });
   });
 });
