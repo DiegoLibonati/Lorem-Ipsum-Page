@@ -3,4 +3,6 @@ interface DefaultProps {
   children?: string;
 }
 
-export interface ParagraphProps extends DefaultProps {}
+export interface ParagraphProps extends DefaultProps {
+  a?: string;
+}

@@ -1,28 +1,8 @@
-import { Paragraph } from "@src/components/Paragraph/Paragraph";
-import paragraphs from "@src/constants/paragraphs";
+import { Paragraph } from "@/components/Paragraph/Paragraph";
 
-import "@src/pages/LoremIpsumPage/LoremIpsumPage.css";
+import paragraphs from "@/constants/paragraphs";
 
-const onSubmitForm = (e: SubmitEvent) => {
-  e.preventDefault();
-
-  const paragraphsList = document.querySelector<HTMLElement>(
-    ".lorem-ipsum__paragraphs"
-  );
-  const input = document.querySelector<HTMLInputElement>(".lorem-ipsum__input");
-
-  paragraphsList?.replaceChildren();
-
-  const valueGenerate = Number(input!.value);
-
-  for (let i = 0; i < valueGenerate; i++) {
-    const randomValue = Math.floor(Math.random() * paragraphs.length);
-
-    const paragraphElement = Paragraph({ children: paragraphs[randomValue] });
-
-    paragraphsList?.append(paragraphElement);
-  }
-};
+import "@/pages/LoremIpsumPage/LoremIpsumPage.css";
 
 export const LoremIpsumPage = (): HTMLElement => {
   const main = document.createElement("main");
@@ -53,6 +33,32 @@ export const LoremIpsumPage = (): HTMLElement => {
         <article class="lorem-ipsum__paragraphs"></article>
     </section>
   `;
+
+  const onSubmitForm = (e: SubmitEvent): void => {
+    e.preventDefault();
+
+    const paragraphsList = main.querySelector<HTMLElement>(
+      ".lorem-ipsum__paragraphs"
+    );
+    const input = main.querySelector<HTMLInputElement>(".lorem-ipsum__input");
+
+    paragraphsList?.replaceChildren();
+
+    const valueGenerate = Number(input?.value);
+
+    for (let i = 0; i < valueGenerate; i++) {
+      const randomValue = Math.floor(Math.random() * paragraphs.length);
+      const paragraph = paragraphs[randomValue];
+
+      if (paragraph) {
+        const paragraphElement = Paragraph({
+          children: paragraph,
+        });
+
+        paragraphsList?.append(paragraphElement);
+      }
+    }
+  };
 
   const form = main.querySelector<HTMLFormElement>(".lorem-ipsum__form");
 
