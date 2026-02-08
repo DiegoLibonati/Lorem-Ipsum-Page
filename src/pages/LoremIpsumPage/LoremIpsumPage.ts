@@ -1,11 +1,13 @@
+import type { Page } from "@/types/pages";
+
 import { Paragraph } from "@/components/Paragraph/Paragraph";
 
 import paragraphs from "@/constants/paragraphs";
 
 import "@/pages/LoremIpsumPage/LoremIpsumPage.css";
 
-export const LoremIpsumPage = (): HTMLElement => {
-  const main = document.createElement("main");
+export const LoremIpsumPage = (): Page => {
+  const main = document.createElement("main") as Page;
   main.className = "lorem-ipsum-page";
 
   main.innerHTML = `

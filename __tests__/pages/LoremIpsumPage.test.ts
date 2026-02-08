@@ -1,6 +1,8 @@
 import { screen, waitFor } from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
 
+import type { Page } from "@/types/pages";
+
 import { LoremIpsumPage } from "@/pages/LoremIpsumPage/LoremIpsumPage";
 
 import paragraphs from "@/constants/paragraphs";
@@ -11,7 +13,7 @@ jest.doMock("@/constants/paragraphs", () => ({
   default: mockParagraphs,
 }));
 
-const renderComponent = (): HTMLElement => {
+const renderComponent = (): Page => {
   const container = LoremIpsumPage();
   document.body.appendChild(container);
   return container;

@@ -1,10 +1,12 @@
 import { screen } from "@testing-library/dom";
 
+import type { ParagraphComponent } from "@/types/components";
+
 import { Paragraph } from "@/components/Paragraph/Paragraph";
 
 import type { ParagraphProps } from "@/types/props";
 
-const renderComponent = (props: ParagraphProps): HTMLParagraphElement => {
+const renderComponent = (props: ParagraphProps): ParagraphComponent => {
   const container = Paragraph(props);
   document.body.appendChild(container);
   return container;
