@@ -13,7 +13,7 @@ jest.doMock("@/constants/paragraphs", () => ({
   default: mockParagraphs,
 }));
 
-const renderComponent = (): Page => {
+const renderPage = (): Page => {
   const container = LoremIpsumPage();
   document.body.appendChild(container);
   return container;
@@ -31,7 +31,7 @@ describe("LoremIpsumPage", () => {
 
   describe("General Tests", () => {
     it("should render the main component structure", () => {
-      renderComponent();
+      renderPage();
 
       const main = screen.getByRole("main");
       expect(main).toBeInTheDocument();
@@ -39,7 +39,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should render header section", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const header = container.querySelector<HTMLElement>(".header-app");
       const title = screen.getByText("TIRED OF BORING LOREM IPSUM?");
@@ -49,7 +49,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should render lorem ipsum section", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const section = container.querySelector<HTMLElement>(".lorem-ipsum");
       const form =
@@ -64,7 +64,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should render h1 for title", () => {
-      renderComponent();
+      renderPage();
 
       const title = screen.getByRole("heading", {
         name: /tired of boring lorem ipsum/i,
@@ -77,7 +77,7 @@ describe("LoremIpsumPage", () => {
 
   describe("Form Elements Tests", () => {
     it("should render form with all elements", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const form =
         container.querySelector<HTMLFormElement>(".lorem-ipsum__form");
@@ -94,7 +94,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should have input with correct type", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -104,7 +104,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should have submit button with correct attributes", () => {
-      renderComponent();
+      renderPage();
 
       const button = screen.getByRole("button", { name: /generate/i });
       expect(button).toHaveClass("lorem-ipsum__btn-generate");
@@ -113,7 +113,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should render label element", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const label = container.querySelector<HTMLParagraphElement>(
         ".lorem-ipsum__label"
@@ -124,7 +124,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should render article for paragraphs container", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const article = container.querySelector<HTMLElement>(
         ".lorem-ipsum__paragraphs"
@@ -138,7 +138,7 @@ describe("LoremIpsumPage", () => {
     it("should generate paragraphs when form is submitted", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -160,7 +160,7 @@ describe("LoremIpsumPage", () => {
     it("should generate correct number of paragraphs based on input", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -182,7 +182,7 @@ describe("LoremIpsumPage", () => {
     it("should generate single paragraph when input is 1", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -203,7 +203,7 @@ describe("LoremIpsumPage", () => {
 
     it("should not generate paragraphs when input is 0", async () => {
       const user = userEvent.setup();
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -227,7 +227,7 @@ describe("LoremIpsumPage", () => {
     it("should append paragraphs to paragraphs container", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -252,7 +252,7 @@ describe("LoremIpsumPage", () => {
     it("should generate random paragraphs from paragraphs array", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -273,7 +273,7 @@ describe("LoremIpsumPage", () => {
     it("should use Math.random to select paragraphs", async () => {
       const user = userEvent.setup();
       const randomSpy = jest.spyOn(Math, "random").mockReturnValue(0.5);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -290,7 +290,7 @@ describe("LoremIpsumPage", () => {
     it("should create Paragraph components", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -316,7 +316,7 @@ describe("LoremIpsumPage", () => {
     it("should clear previous paragraphs before generating new ones", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -346,7 +346,7 @@ describe("LoremIpsumPage", () => {
     it("should use replaceChildren to clear container", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -371,7 +371,7 @@ describe("LoremIpsumPage", () => {
     it("should not accumulate paragraphs from multiple submissions", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -402,7 +402,7 @@ describe("LoremIpsumPage", () => {
     it("should convert input value to number", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -424,7 +424,7 @@ describe("LoremIpsumPage", () => {
     it("should handle string number conversion", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -455,7 +455,7 @@ describe("LoremIpsumPage", () => {
         return value!;
       });
 
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -486,7 +486,7 @@ describe("LoremIpsumPage", () => {
       const floorSpy = jest.spyOn(Math, "floor");
       jest.spyOn(Math, "random").mockReturnValue(0.7);
 
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
@@ -504,7 +504,7 @@ describe("LoremIpsumPage", () => {
   describe("Form Behavior Tests", () => {
     it("should prevent default form submission", async () => {
       const user = userEvent.setup();
-      const container = renderComponent();
+      const container = renderPage();
 
       const form =
         container.querySelector<HTMLFormElement>(".lorem-ipsum__form");
@@ -527,7 +527,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should have form element with correct class", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const form =
         container.querySelector<HTMLFormElement>(".lorem-ipsum__form");
@@ -538,7 +538,7 @@ describe("LoremIpsumPage", () => {
 
   describe("DOM Structure Tests", () => {
     it("should have correct section structure", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const headerSection = container.querySelector<HTMLElement>(".header-app");
       const loremSection = container.querySelector<HTMLElement>(".lorem-ipsum");
@@ -548,7 +548,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should nest form inside lorem ipsum section", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const loremSection = container.querySelector<HTMLElement>(".lorem-ipsum");
       const form =
@@ -558,7 +558,7 @@ describe("LoremIpsumPage", () => {
     });
 
     it("should nest paragraphs container inside lorem ipsum section", () => {
-      const container = renderComponent();
+      const container = renderPage();
 
       const loremSection = container.querySelector<HTMLElement>(".lorem-ipsum");
       const paragraphsContainer = loremSection?.querySelector<HTMLElement>(
@@ -573,7 +573,7 @@ describe("LoremIpsumPage", () => {
     it("should handle multiple consecutive generations", async () => {
       const user = userEvent.setup();
       jest.spyOn(Math, "random").mockReturnValue(0);
-      const container = renderComponent();
+      const container = renderPage();
 
       const input = container.querySelector<HTMLInputElement>(
         ".lorem-ipsum__input"
