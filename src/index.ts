@@ -4,10 +4,10 @@ import { LoremIpsumPage } from "@/pages/LoremIpsumPage/LoremIpsumPage";
 const onInit = (): void => {
   const app = document.querySelector<HTMLDivElement>("#app");
 
-  if (app) {
-    const loremIpsumPage = LoremIpsumPage();
-    app.appendChild(loremIpsumPage);
-  }
+  if (!app) throw new Error(`You must render a container to mount the app.`);
+
+  const loremIpsumPage = LoremIpsumPage();
+  app.appendChild(loremIpsumPage);
 };
 
 document.addEventListener("DOMContentLoaded", onInit);

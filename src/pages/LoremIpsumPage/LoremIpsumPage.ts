@@ -41,30 +41,32 @@ export const LoremIpsumPage = (): Page => {
 
     const paragraphsList = main.querySelector<HTMLElement>(
       ".lorem-ipsum__paragraphs"
-    );
-    const input = main.querySelector<HTMLInputElement>(".lorem-ipsum__input");
+    )!;
+    const input = main.querySelector<HTMLInputElement>(".lorem-ipsum__input")!;
 
-    paragraphsList?.replaceChildren();
+    paragraphsList.replaceChildren();
 
-    const valueGenerate = Number(input?.value);
+    const valueGenerate = Number(input.value);
 
     for (let i = 0; i < valueGenerate; i++) {
       const randomValue = Math.floor(Math.random() * paragraphs.length);
-      const paragraph = paragraphs[randomValue];
+      const paragraph = paragraphs[randomValue]!;
 
-      if (paragraph) {
-        const paragraphElement = Paragraph({
-          children: paragraph,
-        });
+      const paragraphElement = Paragraph({
+        children: paragraph,
+      });
 
-        paragraphsList?.append(paragraphElement);
-      }
+      paragraphsList.append(paragraphElement);
     }
   };
 
-  const form = main.querySelector<HTMLFormElement>(".lorem-ipsum__form");
+  const form = main.querySelector<HTMLFormElement>(".lorem-ipsum__form")!;
 
-  form?.addEventListener("submit", onSubmitForm);
+  form.addEventListener("submit", onSubmitForm);
+
+  main.cleanup = (): void => {
+    form.removeEventListener("submit", onSubmitForm);
+  };
 
   return main;
 };
