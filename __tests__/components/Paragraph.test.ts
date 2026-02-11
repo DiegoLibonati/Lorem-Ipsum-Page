@@ -95,7 +95,9 @@ describe("Paragraph", () => {
       });
 
       expect(container.innerHTML).toBe("<strong>Bold text</strong>");
-      expect(container.querySelector("strong")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>("strong")
+      ).toBeInTheDocument();
     });
 
     it("should handle mixed HTML and text content", () => {
@@ -104,7 +106,7 @@ describe("Paragraph", () => {
       });
 
       expect(container.innerHTML).toBe("This is <em>emphasized</em> text");
-      expect(container.querySelector("em")).toBeInTheDocument();
+      expect(container.querySelector<HTMLElement>("em")).toBeInTheDocument();
     });
 
     it("should handle multiple HTML tags", () => {
@@ -112,8 +114,10 @@ describe("Paragraph", () => {
         children: "<strong>Bold</strong> and <em>italic</em> text",
       });
 
-      expect(container.querySelector("strong")).toBeInTheDocument();
-      expect(container.querySelector("em")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>("strong")
+      ).toBeInTheDocument();
+      expect(container.querySelector<HTMLElement>("em")).toBeInTheDocument();
     });
 
     it("should handle nested HTML tags", () => {
@@ -121,8 +125,12 @@ describe("Paragraph", () => {
         children: "<span><strong>Nested</strong> content</span>",
       });
 
-      expect(container.querySelector("span")).toBeInTheDocument();
-      expect(container.querySelector("strong")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLSpanElement>("span")
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>("strong")
+      ).toBeInTheDocument();
     });
   });
 
@@ -227,7 +235,7 @@ describe("Paragraph", () => {
       });
 
       expect(container.innerHTML).toBe("Line 1<br>Line 2");
-      expect(container.querySelector("br")).toBeInTheDocument();
+      expect(container.querySelector<HTMLBRElement>("br")).toBeInTheDocument();
     });
 
     it("should handle tab characters", () => {
@@ -278,7 +286,9 @@ describe("Paragraph", () => {
       });
 
       expect(container.innerHTML).toBe("<span>Test</span>");
-      expect(container.querySelector("span")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLSpanElement>("span")
+      ).toBeInTheDocument();
     });
 
     it("should allow HTML tags to be rendered", () => {
@@ -302,8 +312,8 @@ describe("Paragraph", () => {
         children: "<b>HTML text</b>",
       });
 
-      expect(plainP.querySelector("b")).not.toBeInTheDocument();
-      expect(htmlP.querySelector("b")).toBeInTheDocument();
+      expect(plainP.querySelector<HTMLElement>("b")).not.toBeInTheDocument();
+      expect(htmlP.querySelector<HTMLElement>("b")).toBeInTheDocument();
     });
   });
 });
