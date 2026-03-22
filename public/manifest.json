@@ -1,7 +1,7 @@
 {
-  "name": "Template Vite Vanilla TS",
-  "short_name": "Template",
-  "description": "Personal template for carrying out a project with Vite Vanilla and TypeScript.",
+  "name": "Lorem Ipsum",
+  "short_name": "Lorem Ipsum",
+  "description": "I made a web page that allows the user to display different paragraphs. Once the user enters the number of paragraphs to display and press `Generate`, it will generate the number of paragraphs the user entered. If the user entered 7 and pressed `Generate`, 7 random paragraphs of lorem ipsum will be displayed.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
