@@ -39,7 +39,9 @@ describe("LoremIpsumPage", () => {
     const input = document.querySelector<HTMLInputElement>(
       ".lorem-ipsum__input"
     );
-    const button = screen.getByRole("button", { name: "generate" });
+    const button = screen.getByRole("button", {
+      name: "Generate lorem ipsum paragraphs",
+    });
 
     expect(input).toBeInTheDocument();
     expect(input?.type).toBe("number");
@@ -54,7 +56,9 @@ describe("LoremIpsumPage", () => {
     const input = document.querySelector<HTMLInputElement>(
       ".lorem-ipsum__input"
     );
-    const button = screen.getByRole("button", { name: "generate" });
+    const button = screen.getByRole("button", {
+      name: "Generate lorem ipsum paragraphs",
+    });
 
     if (input) await user.type(input, "3");
     await user.click(button);
@@ -72,7 +76,9 @@ describe("LoremIpsumPage", () => {
     const input = document.querySelector<HTMLInputElement>(
       ".lorem-ipsum__input"
     );
-    const button = screen.getByRole("button", { name: "generate" });
+    const button = screen.getByRole("button", {
+      name: "Generate lorem ipsum paragraphs",
+    });
 
     if (input) await user.type(input, "2");
     await user.click(button);
@@ -101,7 +107,9 @@ describe("LoremIpsumPage", () => {
     const input = document.querySelector<HTMLInputElement>(
       ".lorem-ipsum__input"
     );
-    const button = screen.getByRole("button", { name: "generate" });
+    const button = screen.getByRole("button", {
+      name: "Generate lorem ipsum paragraphs",
+    });
 
     if (input) await user.type(input, "0");
     await user.click(button);

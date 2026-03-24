@@ -4,11 +4,11 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  padding-bottom: 1rem;
+  padding-bottom: 0.625rem;
 }
 
 .header-app {
-  height: 10rem;
+  height: 6.25rem;
 }
 
 .header-app__content {
@@ -19,7 +19,7 @@
 }
 
 .header-app__title {
-  font-size: 3rem;
+  font-size: 1.875rem;
   text-align: center;
 }
 
@@ -46,28 +46,28 @@
 }
 
 .lorem-ipsum__label {
-  padding: 1rem;
-  font-size: 1.8rem;
+  padding: 0.625rem;
+  font-size: 1.125rem;
 }
 
 .lorem-ipsum__input {
-  max-width: 8rem;
-  max-height: 3rem;
-  font-size: 1.5rem;
+  max-width: 5rem;
+  max-height: 1.875rem;
+  font-size: 0.9375rem;
   text-align: center;
-  border-radius: 1rem;
-  border: 0.1rem solid var(--color-black);
+  border-radius: 0.625rem;
+  border: 0.0625rem solid var(--color-black);
 }
 
 .lorem-ipsum__btn-generate {
-  font-size: 1.5rem;
-  border: 0.1rem solid var(--color-black);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  font-size: 0.9375rem;
+  border: 0.0625rem solid var(--color-black);
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   background-color: var(--color-primary);
-  border-radius: 1rem;
+  border-radius: 0.625rem;
   cursor: pointer;
   color: var(--color-white);
   width: fit-content;
@@ -78,6 +78,6 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
 }
