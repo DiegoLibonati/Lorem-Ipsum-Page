@@ -1,12 +1,12 @@
 import type { Page } from "@/types/pages";
 
-import { Paragraph } from "@/components/Paragraph/Paragraph";
+import Paragraph from "@/components/Paragraph/Paragraph";
 
 import paragraphs from "@/constants/paragraphs";
 
 import "@/pages/LoremIpsumPage/LoremIpsumPage.css";
 
-export const LoremIpsumPage = (): Page => {
+const LoremIpsumPage = (): Page => {
   const main = document.createElement("main") as Page;
   main.className = "lorem-ipsum-page";
   main.setAttribute("aria-label", "Lorem ipsum generator");
@@ -71,3 +71,5 @@ export const LoremIpsumPage = (): Page => {
 
   return main;
 };
+
+export default LoremIpsumPage;

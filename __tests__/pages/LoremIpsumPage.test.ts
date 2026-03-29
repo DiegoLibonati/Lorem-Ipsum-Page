@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import type { Page } from "@/types/pages";
 
-import { LoremIpsumPage } from "@/pages/LoremIpsumPage/LoremIpsumPage";
+import LoremIpsumPage from "@/pages/LoremIpsumPage/LoremIpsumPage";
 
 const renderPage = (): Page => {
   const container = LoremIpsumPage();

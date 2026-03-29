@@ -1,7 +1,7 @@
 import type { ParagraphProps } from "@/types/props";
 import type { ParagraphComponent } from "@/types/components";
 
-import { Paragraph } from "@/components/Paragraph/Paragraph";
+import Paragraph from "@/components/Paragraph/Paragraph";
 
 const renderComponent = (props: ParagraphProps): ParagraphComponent => {
   const container = Paragraph(props);
